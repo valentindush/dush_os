@@ -25,3 +25,15 @@ and the list goes on :lol
 The first thing while making an OS kernel is a bootloader
 
 `bootloader/bootloader.asm`
+
+1. Compiling the boatloader into **Machine Code**:
+" ``nasm -f bin booatloader.asm -o bootloader``"
+
+2. Creating a floppy disk image:
+ "``dd if=/dev/zero of=bootloader.img bs=512 count=2880``
+"
+3. Write the bootloader to the first sector
+" ``dd if=bootloader of=bootloader.img conv=notrunc``"
+4. Run the bootloader using QUMU
+"``qemu-system-i386-machine q35-fda disk.img-gdb
+ tcp::26000-S``
