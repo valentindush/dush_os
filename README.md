@@ -36,4 +36,4 @@ The first thing while making an OS kernel is a bootloader
 " ``dd if=bootloader of=bootloader.img conv=notrunc``"
 4. Run the bootloader using QUMU
 "``qemu-system-i386-machine q35-fda disk.img-gdb
- tcp::26000-S``
+ tcp::26000-S``"
